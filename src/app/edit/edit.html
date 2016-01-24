@@ -1,0 +1,41 @@
+<form>
+  <h4>Add/Edit widget</h4>
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control" placeholder="Enter name" ng-model="vm.widget.name">
+  </div>
+
+  <div class="form-group">
+    <label>Keys</label>
+    <div class="row form-group" ng-repeat="pair in vm.widget.keys">
+      <div class="col-xs-6">
+        <input type="text" class="form-control" ng-model="pair.key">
+      </div>
+      <div class="col-xs-6">
+        <input type="text" class="form-control" ng-model="pair.val">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="form-group row">
+    <div class="col-xs-5">
+      <input type="text" class="form-control" placeholder="Enter key" ng-model="vm.newKey">
+    </div>
+    <div class="col-xs-5">
+      <input type="text" class="form-control" placeholder="Enter value" ng-model="vm.newVal">
+    </div>
+    <div class="col-xs-2">
+      <button class="btn btn-default"
+              ng-click="vm.itemAddPair()">
+        Add Pair
+      </button>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="small">* press Add Pair to add pairs both values must be present, save does not add pairs</div>
+    <button class="btn btn-default" ui-sref="main">Back</button>
+    <button class="btn btn-primary" ng-click="vm.saveWidget()">Save</button>
+  </div>
+</form>

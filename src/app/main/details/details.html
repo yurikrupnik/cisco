@@ -1,0 +1,13 @@
+<div class="details">
+  <div class="content" ng-show="vm.widget.name">
+    <div class="text-right">
+      <button class="btn btn-xs btn-default" ui-sref="edit({id: vm.widget.id, widget: vm.widget, index: vm.index})">Edit</button>
+    </div>
+    <h3>{{vm.widget.name}}</h3>
+
+    <div class="row item" ng-repeat="widgetKey in vm.widget.keys">
+      <div class="col-sm-6">{{widgetKey.key}}</div>
+      <div class="col-sm-6">{{widgetKey.val}}</div>
+    </div>
+  </div>
+</div>

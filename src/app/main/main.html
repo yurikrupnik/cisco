@@ -1,0 +1,27 @@
+<h2>widgets</h2>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="row widget" ng-repeat="widget in main.widgets">
+      <div class="col-sm-7">
+        {{::widget.name}}
+      </div>
+      <div class="col-sm-5 text-right">
+        <button ng-click="main.showDetails(widget.id, widget, $index)"
+                class="btn btn-xs btn-default">
+          Details
+        </button>
+        <button class="btn btn-xs btn-default"
+                ng-click="main.remove(main.widgets, $index)"
+                confirm="Are you sure?"
+                confirm-title="Please verify?"
+                confirm-ok="Yes" confirm-cancel="No">
+          Remove
+        </button>
+      </div>
+    </div>
+    <button class="btn-block btn-primary" ui-sref="edit">Add</button>
+  </div>
+  <div class="col-sm-8">
+    <div ui-view></div>
+  </div>
+</div>
